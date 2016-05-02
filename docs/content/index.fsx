@@ -14,7 +14,8 @@ Documentation
   <div class="span6">
     <div class="well well-small" id="nuget">
       The Endorphin.Core library can be <a href="https://nuget.org/packages/Endorphin.Core">installed from NuGet</a>:
-      <pre>PM> Install-Package Endorphin.Core -Pre</pre>
+      <pre>PM> Install-Package Endorphin.Core -Pre
+PM> Install-Package Endorphin.Core.NationalInstruments -Pre</pre>
     </div>
   </div>
   <div class="span1"></div>
