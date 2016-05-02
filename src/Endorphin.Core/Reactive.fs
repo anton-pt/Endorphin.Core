@@ -83,7 +83,7 @@ module Event =
     /// up to its specified size.
     let ringBufferMapi size mapping =
         Event.scan (fun (i, buffer) x -> (i + 1, RingBuffer.push (mapping i x) buffer)) (0, RingBuffer.create size)
-        >> Event.map (fun (i, buffer) -> RingBuffer.enumerate buffer)
+        >> Event.map (fun (_, buffer) -> RingBuffer.enumerate buffer)
 
 [<AutoOpen>]
 module ObservableHelpers =
