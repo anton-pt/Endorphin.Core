@@ -76,8 +76,9 @@ module Choice =
             | Choice2Of2 f  -> fail f
 
 [<AutoOpen>]
-/// 
-module ChoiceExtensions =
+/// Success/Failure semantics for Choice<'T1, 'T2> and Choice.Builder instance available directly in the
+/// Endorphin.Core namespace.
+module ChoiceHelpers =
     /// Success or failure semantics for Choice types.  These function simply adds aliases for Choice1Of2
     /// and Choice2Of2 corresponding to Success and Failure.
     let (|Success|Failure|) = function

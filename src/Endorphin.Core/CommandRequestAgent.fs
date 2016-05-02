@@ -6,9 +6,9 @@ open System
 open log4net
 
 [<AutoOpen>]
-/// Generic command/request agent with error handling used to serialise posted commands and
-/// requests which are defined by closures. Useful in serialising communications to an
-/// instrument with a C API.
+/// Generic command/request agent with error handling used for I/O to and from instruments with
+/// C APIs. The agent ensures that I/O is performed sequentially. The commands and requests to be
+/// performed are defined by async workflows or closures.
 module CommandRequestAgent = 
     
     [<AutoOpen>]
