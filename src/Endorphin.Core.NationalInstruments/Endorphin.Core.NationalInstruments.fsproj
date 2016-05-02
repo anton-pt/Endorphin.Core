@@ -40,6 +40,18 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\paket-files\anton-pt\Endorphin.Core\src\extras\String.fs">
+      <Paket>True</Paket>
+      <Link>paket-files/String.fs</Link>
+    </Compile>
+    <Compile Include="..\..\paket-files\anton-pt\Endorphin.Core\src\extras\Choice.fs">
+      <Paket>True</Paket>
+      <Link>paket-files/Choice.fs</Link>
+    </Compile>
+    <Compile Include="..\..\paket-files\anton-pt\Endorphin.Core\src\extras\Control.fs">
+      <Paket>True</Paket>
+      <Link>paket-files/Control.fs</Link>
+    </Compile>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>

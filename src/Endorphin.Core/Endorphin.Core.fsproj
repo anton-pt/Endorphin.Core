@@ -61,17 +61,20 @@
   -->
   <Import Project="..\..\.paket\paket.targets" />
   <ItemGroup>
+    <Compile Include="..\..\paket-files\anton-pt\Endorphin.Core\src\extras\Choice.fs">
+      <Paket>True</Paket>
+      <Link>paket-files/Choice.fs</Link>
+    </Compile>
+    <Compile Include="..\..\paket-files\anton-pt\Endorphin.Core\src\extras\Control.fs">
+      <Paket>True</Paket>
+      <Link>paket-files/Control.fs</Link>
+    </Compile>
     <None Include="paket.references" />
     <None Include="paket.template" />
     <Content Include="App.config" />
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Choice.fs" />
-    <Compile Include="Control.fs" />
-    <Compile Include="Reactive.fs" />
-    <Compile Include="Collections.fs" />
-    <Compile Include="String.fs" />
-    <Compile Include="Byte.fs" />
     <Compile Include="Units.fs" />
+    <Compile Include="CancellationCapability.fs" />
     <Compile Include="CommandRequestAgent.fs" />
   </ItemGroup>
   <ItemGroup>
