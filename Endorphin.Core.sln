@@ -33,6 +33,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{8E6D
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Endorphin.Core.NationalInstruments", "src\Endorphin.Core.NationalInstruments\Endorphin.Core.NationalInstruments.fsproj", "{A23A505A-18E6-43A9-9A65-A493B7062935}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extras", "extras", "{F55921DD-6CCB-4AD6-B6AC-E6B4AC6527FE}"
+	ProjectSection(SolutionItems) = preProject
+		src\extras\Byte.fs = src\extras\Byte.fs
+		src\extras\Choice.fs = src\extras\Choice.fs
+		src\extras\Collections.fs = src\extras\Collections.fs
+		src\extras\Control.fs = src\extras\Control.fs
+		src\extras\Reactive.fs = src\extras\Reactive.fs
+		src\extras\String.fs = src\extras\String.fs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
