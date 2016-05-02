@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Picoseconds - Endorphin.Core</title>
+    <title>CancellationCapability<'T> - Endorphin.Core</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="University of Warwick EPR and Diamond group"/>
@@ -35,110 +35,131 @@
 
 
 
-<h1>Picoseconds</h1>
+<h1>CancellationCapability<'T></h1>
 <p>
-  <span>Namespace: Microsoft.FSharp.Data.UnitSystems.SI.UnitSymbols</span><br />
-  <span>Parent Module: <a href="microsoft-fsharp-data-unitsystems-si-unitsymbols-units-time.html">Time</a></span>
+  <span>Namespace: Endorphin.Core</span><br />
+  <span>Parent Module: <a href="endorphin-core-cancellationcapability.html">CancellationCapability</a></span>
 </p>
 <div class="xmldoc">
+<p>Cancellation capability with generic options which must be specified at cancellation.</p>
+
 </div>
-
-<!-- Render nested types and modules, if there are any -->
-
-  <h3>Functions and values</h3>
+  <h3>Constructors</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Function or value</td><td>Description</td></tr>
+      <tr><td>Constructor</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '80', 80)" onmouseover="showTip(event, '80', 80)">
-            toFemtoseconds t
+          <code onmouseout="hideTip(event, '104', 104)" onmouseover="showTip(event, '104', 104)">
+            new()
           </code>
-          <div class="tip" id="80">
-            <strong>Signature:</strong> t:float&lt;MeasureProduct&lt;ps,MeasureOne&gt;&gt; -&gt; float&lt;MeasureProduct&lt;fs,MeasureOne&gt;&gt;<br />
+          <div class="tip" id="104">
+            <strong>Signature:</strong> unit -&gt; CancellationCapability&lt;&#39;T&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L95-95" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CancellationCapability.fs#L16-16" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
+            Cancel(options)
+          </code>
+          <div class="tip" id="105">
+            <strong>Signature:</strong> options:&#39;T -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CancellationCapability.fs#L22-22" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Cancels the cancellation capability after setting the specified cancellation options. Can only be
+called once.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '81', 81)" onmouseover="showTip(event, '81', 81)">
-            toMicroseconds t
+          <code onmouseout="hideTip(event, '106', 106)" onmouseover="showTip(event, '106', 106)">
+            IsCancellationRequested
           </code>
-          <div class="tip" id="81">
-            <strong>Signature:</strong> t:float&lt;MeasureProduct&lt;ps,MeasureOne&gt;&gt; -&gt; float&lt;MeasureProduct&lt;us,MeasureOne&gt;&gt;<br />
+          <div class="tip" id="106">
+            <strong>Signature:</strong> bool<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L93-93" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CancellationCapability.fs#L38-38" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Checks if cancellation has already been requested.</p>
+
+
+              <p>CompiledName: <code>get_IsCancellationRequested</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '82', 82)" onmouseover="showTip(event, '82', 82)">
-            toMilliseconds t
+          <code onmouseout="hideTip(event, '107', 107)" onmouseover="showTip(event, '107', 107)">
+            Options
           </code>
-          <div class="tip" id="82">
-            <strong>Signature:</strong> t:float&lt;MeasureProduct&lt;ps,MeasureOne&gt;&gt; -&gt; float&lt;MeasureProduct&lt;ms,MeasureOne&gt;&gt;<br />
+          <div class="tip" id="107">
+            <strong>Signature:</strong> &#39;T<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L92-92" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CancellationCapability.fs#L32-32" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Returns the options argument specifed at cancellation. Throws an exception if cancellation has not
+taken place.</p>
+
+
+              <p>CompiledName: <code>get_Options</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '83', 83)" onmouseover="showTip(event, '83', 83)">
-            toNanoseconds t
+          <code onmouseout="hideTip(event, '108', 108)" onmouseover="showTip(event, '108', 108)">
+            Token
           </code>
-          <div class="tip" id="83">
-            <strong>Signature:</strong> t:float&lt;MeasureProduct&lt;ps,MeasureOne&gt;&gt; -&gt; float&lt;MeasureProduct&lt;ns,MeasureOne&gt;&gt;<br />
+          <div class="tip" id="108">
+            <strong>Signature:</strong> CancellationToken<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L94-94" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CancellationCapability.fs#L42-42" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
+          <p>Returns the cancellation token.</p>
 
-          <code onmouseout="hideTip(event, '84', 84)" onmouseover="showTip(event, '84', 84)">
-            toSeconds t
-          </code>
-          <div class="tip" id="84">
-            <strong>Signature:</strong> t:float&lt;MeasureProduct&lt;ps,MeasureOne&gt;&gt; -&gt; float&lt;MeasureProduct&lt;s,MeasureOne&gt;&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L91-91" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
+
+              <p>CompiledName: <code>get_Token</code></p>
         </td>
       </tr>
     </tbody>
