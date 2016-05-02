@@ -190,3 +190,10 @@ docs/content/license.md
 docs/content/release-notes.md
 .fake
 docs/tools/FSharp.Formatting.svclog
+
+# ===================================================
+# Ignore NI VISA DLL to prevent redistribution
+# license issues
+# ===================================================
+
+NationalInstruments.VisaNS.dll
