@@ -76,17 +76,20 @@ Choice type.</p>
         </tr>
         <tr>
           <td class="module-name">
-            <a href="endorphin-core-choiceextensions.html">ChoiceExtensions</a>
+            <a href="endorphin-core-choicehelpers.html">ChoiceHelpers</a>
           </td>
-          <td class="xmldoc"></td>
+          <td class="xmldoc"><p>Success/Failure semantics for Choice<'T1, 'T2> and Choice.Builder instance available directly in the
+Endorphin.Core namespace.</p>
+
+</td>
         </tr>
         <tr>
           <td class="module-name">
             <a href="endorphin-core-commandrequestagent.html">CommandRequestAgent</a>
           </td>
-          <td class="xmldoc"><p>Generic command/request agent with error handling used to serialise posted commands and
-requests which are defined by closures. Useful in serialising communications to an
-instrument with a C API.</p>
+          <td class="xmldoc"><p>Generic command/request agent with error handling used for I/O to and from instruments with
+C APIs. The agent ensures that I/O is performed sequentially. The commands and requests to be
+performed are defined by async workflows or closures.</p>
 
 </td>
         </tr>
@@ -125,6 +128,15 @@ instrument with a C API.</p>
             <a href="endorphin-core-stringmodule.html">String</a>
           </td>
           <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="endorphin-core-visa.html">Visa</a>
+          </td>
+          <td class="xmldoc"><p>Functions for creating connections and talking to VISA instruments in raw IO mode. Formatted IO using
+the VISA formatting options is not supported.</p>
+
+</td>
         </tr>
     </tbody>
   </table>

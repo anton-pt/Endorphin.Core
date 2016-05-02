@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Volts - Endorphin.Core</title>
+    <title>SerialConfiguration - Endorphin.Core</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="University of Warwick EPR and Diamond group"/>
@@ -35,34 +35,33 @@
 
 
 
-<h1>Volts</h1>
+<h1>SerialConfiguration</h1>
 <p>
-  <span>Namespace: Microsoft.FSharp.Data.UnitSystems.SI.UnitSymbols</span><br />
-  <span>Parent Module: <a href="microsoft-fsharp-data-unitsystems-si-unitsymbols-units-voltage.html">Voltage</a></span>
+  <span>Namespace: Endorphin.Core</span><br />
+  <span>Parent Module: <a href="endorphin-core-visa.html">Visa</a></span>
 </p>
 <div class="xmldoc">
+<p>Serial port configuration.</p>
+
 </div>
-
-<!-- Render nested types and modules, if there are any -->
-
-  <h3>Functions and values</h3>
+  <h3>Record Fields</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Function or value</td><td>Description</td></tr>
+      <tr><td>Record Field</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '138', 138)" onmouseover="showTip(event, '138', 138)">
-            toMicrovolts v
+          <code onmouseout="hideTip(event, '175', 175)" onmouseover="showTip(event, '175', 175)">
+            BaudRate
           </code>
-          <div class="tip" id="138">
-            <strong>Signature:</strong> v:float&lt;MeasureProduct&lt;V,MeasureOne&gt;&gt; -&gt; float&lt;MeasureProduct&lt;uV,MeasureOne&gt;&gt;<br />
+          <div class="tip" id="175">
+            <strong>Signature:</strong> int<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L156-156" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L57-57" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -72,15 +71,51 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '139', 139)" onmouseover="showTip(event, '139', 139)">
-            toMillivolts v
+          <code onmouseout="hideTip(event, '176', 176)" onmouseover="showTip(event, '176', 176)">
+            DataBits
           </code>
-          <div class="tip" id="139">
-            <strong>Signature:</strong> v:float&lt;MeasureProduct&lt;V,MeasureOne&gt;&gt; -&gt; float&lt;MeasureProduct&lt;mV,MeasureOne&gt;&gt;<br />
+          <div class="tip" id="176">
+            <strong>Signature:</strong> int16<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L155-155" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L58-58" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '177', 177)" onmouseover="showTip(event, '177', 177)">
+            Parity
+          </code>
+          <div class="tip" id="177">
+            <strong>Signature:</strong> ParityMode<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L60-60" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '178', 178)" onmouseover="showTip(event, '178', 178)">
+            StopBits
+          </code>
+          <div class="tip" id="178">
+            <strong>Signature:</strong> StopBitMode<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L59-59" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>ResultChannel<'T> - Endorphin.Core</title>
+    <title>Bytes - Endorphin.Core</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="University of Warwick EPR and Diamond group"/>
@@ -35,64 +35,40 @@
 
 
 
-<h1>ResultChannel<'T></h1>
+<h1>Bytes</h1>
 <p>
   <span>Namespace: Endorphin.Core</span><br />
-  <span>Parent Module: <a href="endorphin-core-asyncextensions.html">AsyncExtensions</a></span>
+  <span>Parent Module: <a href="endorphin-core-visa.html">Visa</a></span>
 </p>
 <div class="xmldoc">
-<p>A single-fire result channel which can be used to await a result asynchronously.</p>
+<p>Functions related to byte array-based I/O.</p>
 
 </div>
-  <h3>Constructors</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Constructor</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '150', 150)" onmouseover="showTip(event, '150', 150)">
-            new()
+          <code onmouseout="hideTip(event, '52', 52)" onmouseover="showTip(event, '52', 52)">
+            query instrument message
           </code>
-          <div class="tip" id="150">
-            <strong>Signature:</strong> unit -&gt; ResultChannel&lt;&#39;T&gt;<br />
+          <div class="tip" id="52">
+            <strong>Signature:</strong> instrument:Instrument -&gt; message:string -&gt; Async&lt;byte array&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Control.fs#L29-29" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L410-410" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
-              <p>CompiledName: <code>.ctor</code></p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Instance members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Instance member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '151', 151)" onmouseover="showTip(event, '151', 151)">
-            AwaitResult()
-          </code>
-          <div class="tip" id="151">
-            <strong>Signature:</strong> unit -&gt; Async&lt;&#39;T&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Control.fs#L51-51" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Wait for a result to be registered on the channel asynchronously.</p>
+          <p>Query a VISA instrument for a byte array, using the given string as a query using synchronous I/O.</p>
 
 
         </td>
@@ -100,19 +76,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '152', 152)" onmouseover="showTip(event, '152', 152)">
-            RegisterResult(res)
+          <code onmouseout="hideTip(event, '53', 53)" onmouseover="showTip(event, '53', 53)">
+            queryAsync instrument message
           </code>
-          <div class="tip" id="152">
-            <strong>Signature:</strong> res:&#39;T -&gt; unit<br />
+          <div class="tip" id="53">
+            <strong>Signature:</strong> instrument:Instrument -&gt; message:string -&gt; Async&lt;byte array&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Control.fs#L35-35" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L413-413" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Record the result, starting any registered continuations.</p>
+          <p>Query a VISA instrument for a byte array, using the given string as a query using asynchronous I/O.</p>
 
 
         </td>
@@ -120,22 +96,81 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '153', 153)" onmouseover="showTip(event, '153', 153)">
-            ResultAvailable
+          <code onmouseout="hideTip(event, '54', 54)" onmouseover="showTip(event, '54', 54)">
+            read instrument
           </code>
-          <div class="tip" id="153">
-            <strong>Signature:</strong> bool<br />
+          <div class="tip" id="54">
+            <strong>Signature:</strong> instrument:Instrument -&gt; Async&lt;byte []&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Control.fs#L48-48" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L398-398" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Check if a result has been registered with the channel.</p>
+          <p>Read a byte array that the VISA instrument is broadcasting using synchronous I/O.</p>
 
 
-              <p>CompiledName: <code>get_ResultAvailable</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '55', 55)" onmouseover="showTip(event, '55', 55)">
+            readAsync instrument
+          </code>
+          <div class="tip" id="55">
+            <strong>Signature:</strong> instrument:Instrument -&gt; Async&lt;byte []&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L401-401" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Read a byte array that the VISA instrument is broadcasting using asynchronous I/O</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '56', 56)" onmouseover="showTip(event, '56', 56)">
+            write instrument
+          </code>
+          <div class="tip" id="56">
+            <strong>Signature:</strong> instrument:Instrument -&gt; byte array -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L404-404" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Write a byte array to a VISA instrument using synchronous I/O.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '57', 57)" onmouseover="showTip(event, '57', 57)">
+            writeAsync instrument
+          </code>
+          <div class="tip" id="57">
+            <strong>Signature:</strong> instrument:Instrument -&gt; byte array -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L407-407" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Write a byte array to a VISA instrument using asynchronous I/O.</p>
+
+
         </td>
       </tr>
     </tbody>

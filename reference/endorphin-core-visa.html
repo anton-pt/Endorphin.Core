@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Voltage - Endorphin.Core</title>
+    <title>Visa - Endorphin.Core</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="University of Warwick EPR and Diamond group"/>
@@ -35,12 +35,14 @@
 
 
 
-<h1>Voltage</h1>
+<h1>Visa</h1>
 <p>
-  <span>Namespace: Microsoft.FSharp.Data.UnitSystems.SI.UnitSymbols</span><br />
-  <span>Parent Module: <a href="microsoft-fsharp-data-unitsystems-si-unitsymbols-units.html">Units</a></span>
+  <span>Namespace: Endorphin.Core</span><br />
 </p>
 <div class="xmldoc">
+<p>Functions for creating connections and talking to VISA instruments in raw IO mode. Formatted IO using
+the VISA formatting options is not supported.</p>
+
 </div>
 
 <!-- Render nested types and modules, if there are any -->
@@ -53,15 +55,35 @@
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="microsoft-fsharp-data-unitsystems-si-unitsymbols-units-voltage-mv.html">mV</a>
+            <a href="endorphin-core-visa-instrument.html">Instrument</a>
           </td>
-          <td class="xmldoc"></td>
+          <td class="xmldoc"><p>A VISA instrument, capable of reading, writing and querying strings and byte arrays.</p>
+
+</td>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="microsoft-fsharp-data-unitsystems-si-unitsymbols-units-voltage-uv.html">uV</a>
+            <a href="endorphin-core-visa-paritymode.html">ParityMode</a>
           </td>
-          <td class="xmldoc"></td>
+          <td class="xmldoc"><p>Serial port parity mode.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="endorphin-core-visa-serialconfiguration.html">SerialConfiguration</a>
+          </td>
+          <td class="xmldoc"><p>Serial port configuration.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="endorphin-core-visa-stopbitmode.html">StopBitMode</a>
+          </td>
+          <td class="xmldoc"><p>Serial port stop bit mode.</p>
+
+</td>
         </tr>
     </tbody>
   </table>
@@ -72,21 +94,19 @@
     <tbody>
         <tr>
           <td class="module-name">
-            <a href="microsoft-fsharp-data-unitsystems-si-unitsymbols-units-voltage-microvolts.html">Microvolts</a>
+            <a href="endorphin-core-visa-bytes.html">Bytes</a>
           </td>
-          <td class="xmldoc"></td>
+          <td class="xmldoc"><p>Functions related to byte array-based I/O.</p>
+
+</td>
         </tr>
         <tr>
           <td class="module-name">
-            <a href="microsoft-fsharp-data-unitsystems-si-unitsymbols-units-voltage-millivolts.html">Millivolts</a>
+            <a href="endorphin-core-visa-string.html">String</a>
           </td>
-          <td class="xmldoc"></td>
-        </tr>
-        <tr>
-          <td class="module-name">
-            <a href="microsoft-fsharp-data-unitsystems-si-unitsymbols-units-voltage-volts.html">Volts</a>
-          </td>
-          <td class="xmldoc"></td>
+          <td class="xmldoc"><p>Functions related to string-based I/O.</p>
+
+</td>
         </tr>
     </tbody>
   </table>
@@ -102,109 +122,87 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '128', 128)" onmouseover="showTip(event, '128', 128)">
-            microvoltsPerMilliVolt 
+          <code onmouseout="hideTip(event, '48', 48)" onmouseover="showTip(event, '48', 48)">
+            closeInstrument(instrument)
           </code>
-          <div class="tip" id="128">
-            <strong>Signature:</strong> float&lt;MeasureProduct&lt;MeasureInverse&lt;mV&gt;,MeasureProduct&lt;uV,MeasureOne&gt;&gt;&gt;<br />
+          <div class="tip" id="48">
+            <strong>Signature:</strong> instrument:Instrument -&gt; Async&lt;unit&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L152-152" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L371-371" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Close the connection to a VISA instrument.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '129', 129)" onmouseover="showTip(event, '129', 129)">
-            microvoltsPerVolt 
+          <code onmouseout="hideTip(event, '49', 49)" onmouseover="showTip(event, '49', 49)">
+            openGpibInstrument(...)
           </code>
-          <div class="tip" id="129">
-            <strong>Signature:</strong> float&lt;MeasureProduct&lt;MeasureInverse&lt;V&gt;,MeasureProduct&lt;uV,MeasureOne&gt;&gt;&gt;<br />
+          <div class="tip" id="49">
+            <strong>Signature:</strong> visaId:string -&gt; timeout:int&lt;MeasureProduct&lt;ms,MeasureOne&gt;&gt; -&gt; writeDelay:int&lt;MeasureProduct&lt;ms,MeasureOne&gt;&gt; option -&gt; Instrument<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L151-151" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L366-366" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Open a GPIB VISA instrument with the given VISA identifier address and a timeout in milliseconds
+to wait for each raw command. The optional write delay is used to delay further communication with
+the hardware after each write command for a specified period.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '130', 130)" onmouseover="showTip(event, '130', 130)">
-            millivoltsPerMicroVolt 
+          <code onmouseout="hideTip(event, '50', 50)" onmouseover="showTip(event, '50', 50)">
+            openSerialInstrument(...)
           </code>
-          <div class="tip" id="130">
-            <strong>Signature:</strong> float&lt;MeasureProduct&lt;MeasureInverse&lt;uV&gt;,MeasureProduct&lt;mV,MeasureOne&gt;&gt;&gt;<br />
+          <div class="tip" id="50">
+            <strong>Signature:</strong> visaId:string -&gt; timeout:int&lt;MeasureProduct&lt;ms,MeasureOne&gt;&gt; -&gt; writeDelay:int&lt;MeasureProduct&lt;ms,MeasureOne&gt;&gt; option -&gt; configuration:SerialConfiguration -&gt; Instrument<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L149-149" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L352-352" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Open a RS-232 VISA instrument with the given VISA identifier address and a timeout in milliseconds
+to wait for each raw command. The optional write delay is used to delay further communication with
+the hardware after each write command for a specified period.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '131', 131)" onmouseover="showTip(event, '131', 131)">
-            millivoltsPerVolt 
+          <code onmouseout="hideTip(event, '51', 51)" onmouseover="showTip(event, '51', 51)">
+            openTcpipInstrument(...)
           </code>
-          <div class="tip" id="131">
-            <strong>Signature:</strong> float&lt;MeasureProduct&lt;MeasureInverse&lt;V&gt;,MeasureProduct&lt;mV,MeasureOne&gt;&gt;&gt;<br />
+          <div class="tip" id="51">
+            <strong>Signature:</strong> visaId:string -&gt; timeout:int&lt;MeasureProduct&lt;ms,MeasureOne&gt;&gt; -&gt; writeDelay:int&lt;MeasureProduct&lt;ms,MeasureOne&gt;&gt; option -&gt; Instrument<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L148-148" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core.NationalInstruments/VisaAgent.fs#L359-359" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
+          <p>Open a Ethernet VISA instrument with the given VISA identifier address and a timeout in milliseconds
+to wait for each raw command. The optional write delay is used to delay further communication with
+the hardware after each write command for a specified period.</p>
 
-          <code onmouseout="hideTip(event, '132', 132)" onmouseover="showTip(event, '132', 132)">
-            voltsPerMicroVolt 
-          </code>
-          <div class="tip" id="132">
-            <strong>Signature:</strong> float&lt;MeasureProduct&lt;MeasureInverse&lt;uV&gt;,MeasureProduct&lt;V,MeasureOne&gt;&gt;&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L146-146" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
 
-          <code onmouseout="hideTip(event, '133', 133)" onmouseover="showTip(event, '133', 133)">
-            voltsPerMilliVolt 
-          </code>
-          <div class="tip" id="133">
-            <strong>Signature:</strong> float&lt;MeasureProduct&lt;MeasureInverse&lt;mV&gt;,MeasureProduct&lt;V,MeasureOne&gt;&gt;&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/Units.fs#L145-145" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
         </td>
       </tr>
     </tbody>

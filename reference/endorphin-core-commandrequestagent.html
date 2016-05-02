@@ -40,9 +40,9 @@
   <span>Namespace: Endorphin.Core</span><br />
 </p>
 <div class="xmldoc">
-<p>Generic command/request agent with error handling used to serialise posted commands and
-requests which are defined by closures. Useful in serialising communications to an
-instrument with a C API.</p>
+<p>Generic command/request agent with error handling used for I/O to and from instruments with
+C APIs. The agent ensures that I/O is performed sequentially. The commands and requests to be
+performed are defined by async workflows or closures.</p>
 
 </div>
 
@@ -59,7 +59,8 @@ instrument with a C API.</p>
             <a href="endorphin-core-commandrequestagent-commandrequestagent.html">CommandRequestAgent</a>
           </td>
           <td class="xmldoc"><p>Functions for creating and interacting with a generic command/request agent with error
-handling used to serialise posted commands and requests which are defined by closures.</p>
+handling used to serialise posted commands and requests which are defined by asynchronous
+workflows.</p>
 
 </td>
         </tr>

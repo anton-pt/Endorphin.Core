@@ -42,7 +42,8 @@
 </p>
 <div class="xmldoc">
 <p>Functions for creating and interacting with a generic command/request agent with error
-handling used to serialise posted commands and requests which are defined by closures.</p>
+handling used to serialise posted commands and requests which are defined by asynchronous
+workflows.</p>
 
 </div>
 
@@ -58,21 +59,20 @@ handling used to serialise posted commands and requests which are defined by clo
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
-            close(closeFunc arg2)
+            close(closeFunc agent)
           </code>
           <div class="tip" id="14">
-            <strong>Signature:</strong> closeFunc:(&#39;?7443 -&gt; Choice&lt;unit,exn&gt;) -&gt; CommandRequestAgent&lt;&#39;?7443&gt; -&gt; Async&lt;unit&gt;<br />
-                          <strong>Type parameters:</strong> '?7443          </div>
+            <strong>Signature:</strong> closeFunc:(&#39;?7453 -&gt; Choice&lt;unit,exn&gt;) -&gt; agent:CommandRequestAgent&lt;&#39;?7453&gt; -&gt; Async&lt;unit&gt;<br />
+                          <strong>Type parameters:</strong> '?7453          </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L130-130" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L183-183" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Shuts down the message-processing agent after calling the supplied closing function. The
-function may succeed or fail, and if failure occurs, the enclosed exception is raised.
-Furthermore, an exception will be raised if there are any remaining messages in the queue
-at this point.</p>
+          <p>Shuts down the message-processing agent after calling the given closing function with the
+agent handle. If failure occurs during this process, the enclosed exception is raised.
+An exception will also be raised if there are any remaining messages in the queue at this point.</p>
 
 
         </td>
@@ -81,21 +81,20 @@ at this point.</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
-            create(nameFunc init)
+            closeAsync(closeBuilder arg2)
           </code>
           <div class="tip" id="15">
-            <strong>Signature:</strong> nameFunc:(&#39;Handle -&gt; string) -&gt; init:(unit -&gt; Async&lt;Choice&lt;&#39;Handle,exn&gt;&gt;) -&gt; Async&lt;CommandRequestAgent&lt;&#39;Handle&gt;&gt;<br />
-                          <strong>Type parameters:</strong> 'Handle          </div>
+            <strong>Signature:</strong> closeBuilder:(&#39;?7451 -&gt; Async&lt;Choice&lt;unit,exn&gt;&gt;) -&gt; CommandRequestAgent&lt;&#39;?7451&gt; -&gt; Async&lt;unit&gt;<br />
+                          <strong>Type parameters:</strong> '?7451          </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L53-53" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L173-173" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Asynchronously starts a new command/request agent with the given name (function of
-handle, used for logging purposes) and initialisation workflow. The initialisation
-may fail, in which case this workflow will return failure. Furthermore, the
-processing of any given message may fail.</p>
+          <p>Shuts down the message-processing agent after performing the given closing async workflow with the
+agent handle. If failure occurs during this process, the enclosed exception is raised.
+An exception will also be raised if there are any remaining messages in the queue at this point.</p>
 
 
         </td>
@@ -104,20 +103,21 @@ processing of any given message may fail.</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
-            performCommand(...)
+            create(nameFunc init)
           </code>
           <div class="tip" id="16">
-            <strong>Signature:</strong> description:string -&gt; commandFunc:(&#39;?7435 -&gt; Choice&lt;unit,exn&gt;) -&gt; CommandRequestAgent&lt;&#39;?7435&gt; -&gt; Async&lt;unit&gt;<br />
-                          <strong>Type parameters:</strong> '?7435          </div>
+            <strong>Signature:</strong> nameFunc:(&#39;Handle -&gt; string) -&gt; init:(unit -&gt; Async&lt;Choice&lt;&#39;Handle,exn&gt;&gt;) -&gt; Async&lt;CommandRequestAgent&lt;&#39;Handle&gt;&gt;<br />
+                          <strong>Type parameters:</strong> 'Handle          </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L104-104" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L54-54" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Posts a command to the message queue which will be executed by calling the provided
-function. The command may succeed or fail, and if failure occurs, the enclosed
-exception is raised. The provided description is used for logging.</p>
+          <p>Asynchronously starts a new command/request agent with the given name (function of
+the handle, used for logging purposes) and initialisation workflow. The initialisation
+may fail, in which case this workflow will return failure. Furthermore, the processing
+of any given message may fail.</p>
 
 
         </td>
@@ -126,21 +126,20 @@ exception is raised. The provided description is used for logging.</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
-            performObjectRequest(...)
+            performCommand(...)
           </code>
           <div class="tip" id="17">
-            <strong>Signature:</strong> description:string -&gt; requestFunc:(&#39;Handle -&gt; Choice&lt;&#39;Result,exn&gt;) -&gt; CommandRequestAgent&lt;&#39;Handle&gt; -&gt; Async&lt;&#39;Result&gt;<br />
-                          <strong>Type parameters:</strong> 'Handle, 'Result          </div>
+            <strong>Signature:</strong> description:string -&gt; commandFunc:(&#39;?7437 -&gt; Choice&lt;unit,exn&gt;) -&gt; agent:CommandRequestAgent&lt;&#39;?7437&gt; -&gt; Async&lt;unit&gt;<br />
+                          <strong>Type parameters:</strong> '?7437          </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L112-112" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L115-115" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Posts a request to the message queue which will be executed by calling the provided
-function. The request may succeed or fail, and if failure occurs, the enclosed
-exception is raised. . If the request is successful, it returns an object type. The
-provided description is used for logging.</p>
+          <p>Posts a command to the message queue which will be executed by calling the provided
+function with the agent handle. If failure occurs, the enclosed exception is raised.
+The provided description is used for logging.</p>
 
 
         </td>
@@ -149,21 +148,112 @@ provided description is used for logging.</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
-            performValueRequest(...)
+            performCommandAsync(...)
           </code>
           <div class="tip" id="18">
-            <strong>Signature:</strong> description:string -&gt; requestFunc:(&#39;Handle -&gt; Choice&lt;&#39;Result,exn&gt;) -&gt; CommandRequestAgent&lt;&#39;Handle&gt; -&gt; Async&lt;&#39;Result&gt;<br />
+            <strong>Signature:</strong> description:string -&gt; commandBuilder:(&#39;?7435 -&gt; Async&lt;Choice&lt;unit,exn&gt;&gt;) -&gt; CommandRequestAgent&lt;&#39;?7435&gt; -&gt; Async&lt;unit&gt;<br />
+                          <strong>Type parameters:</strong> '?7435          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L105-105" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Posts a command to the message queue which will be executed by performing the given
+async workflow with the agent handle. If failure occurs, the enclosed exception is
+raised. The provided description is used for logging.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
+            performObjectRequest(...)
+          </code>
+          <div class="tip" id="19">
+            <strong>Signature:</strong> description:string -&gt; requestFunc:(&#39;Handle -&gt; Choice&lt;&#39;Result,exn&gt;) -&gt; agent:CommandRequestAgent&lt;&#39;Handle&gt; -&gt; Async&lt;&#39;Result&gt;<br />
                           <strong>Type parameters:</strong> 'Handle, 'Result          </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L121-121" class="github-link">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L139-139" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Posts a request to the message queue which will be executed by calling the provided
-function. The request may succeed or fail, and if failure occurs, the enclosed
-exception is raised. If the request is successful, it returns a value type. The
-provided description is used for logging.</p>
+function with the agent handle. If the request is successful, the object is returned.
+If failure occurs, the enclosed exception is raised. The provided description is used
+for logging.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '20', 20)" onmouseover="showTip(event, '20', 20)">
+            performObjectRequestAsync(...)
+          </code>
+          <div class="tip" id="20">
+            <strong>Signature:</strong> description:string -&gt; requestBuilder:(&#39;Handle -&gt; Async&lt;Choice&lt;&#39;Result,exn&gt;&gt;) -&gt; CommandRequestAgent&lt;&#39;Handle&gt; -&gt; Async&lt;&#39;Result&gt;<br />
+                          <strong>Type parameters:</strong> 'Handle, 'Result          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L123-123" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Posts a request to the message queue which will be executed by performing the given
+async workflow with the agent handle. If the request is successful, the object is returned.
+If failure occurs, the enclosed exception is raised. The provided description is used
+for logging.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
+            performValueRequest(...)
+          </code>
+          <div class="tip" id="21">
+            <strong>Signature:</strong> description:string -&gt; requestFunc:(&#39;Handle -&gt; Choice&lt;&#39;Result,exn&gt;) -&gt; agent:CommandRequestAgent&lt;&#39;Handle&gt; -&gt; Async&lt;&#39;Result&gt;<br />
+                          <strong>Type parameters:</strong> 'Handle, 'Result          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L165-165" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Posts a request to the message queue which will be executed by calling the provided
+function with the agent handle. If the request is successful, the value is returned. If
+failure occurs, the enclosed exception is raised. The provided description is used for
+logging.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
+            performValueRequestAsync(...)
+          </code>
+          <div class="tip" id="22">
+            <strong>Signature:</strong> description:string -&gt; requestBuilder:(&#39;Handle -&gt; Async&lt;Choice&lt;&#39;Result,exn&gt;&gt;) -&gt; CommandRequestAgent&lt;&#39;Handle&gt; -&gt; Async&lt;&#39;Result&gt;<br />
+                          <strong>Type parameters:</strong> 'Handle, 'Result          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/anton-pt/Endorphin.Core/tree/master/src/Endorphin.Core/CommandRequestAgent.fs#L148-148" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Posts a request to the message queue which will be executed by performing the given async
+workflow with the agent handle. If the request is successful, the value is returned. If
+failure occurs, the enclosed exception is raised. The provided description is used for
+logging.</p>
 
 
         </td>
